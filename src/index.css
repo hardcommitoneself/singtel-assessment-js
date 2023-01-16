@@ -53,3 +53,20 @@ input[type="checkbox"]:checked::after {
 input[type="checkbox"]:checked::before {
   @apply !bg-indigo-500
 }
+
+/* radio */
+input[type="radio"] {
+  @apply appearance-none border border-[#A8A8A8] rounded-full
+}
+
+input[type="radio"]:checked {
+  @apply border-none
+}
+
+input[type="radio"]::before {
+  @apply content-[''] absolute w-full h-full rounded-full;
+}
+
+input[type="radio"]:checked::before {
+  @apply border-[6px] md:border-8 border-indigo-500
+}
