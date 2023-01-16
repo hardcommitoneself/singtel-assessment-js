@@ -28,3 +28,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* checkbox */
+input[type="checkbox"] {
+  /* ...existing styles */
+  @apply appearance-none border border-[#A8A8A8] rounded sm:rounded-xl
+}
+
+input[type="checkbox"]:checked {
+  @apply border-none
+}
+
+input[type="checkbox"]::before {
+  @apply content-[''] absolute w-full h-full rounded sm:rounded-xl;
+}
+
+input[type="checkbox"]:checked::after {
+  @apply content-[''] absolute w-full h-full rounded sm:rounded-xl bg-[length:8px_8px] sm:bg-[length:15px_15px];
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+"); 
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+input[type="checkbox"]:checked::before {
+  @apply !bg-indigo-500
+}
